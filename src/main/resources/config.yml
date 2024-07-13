@@ -1,0 +1,9 @@
+joined-rtpq: "You joined the queue."
+left-rtpq: "You left the queue."
+global-joined-rtpq: "%player joined the queue."
+being-teleported: "You are being teleported."
+config-reloaded: "&2Config Reloaded"
+Min x: 50
+Min z: 50
+Max x: 3000
+Max z: 3000

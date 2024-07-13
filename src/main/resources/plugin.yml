@@ -1,0 +1,4 @@
+name: rtpqueueplugin
+version: '${project.version}'
+main: me.yech.rtpqueueplugin.Rtpqueueplugin
+api-version: '1.20'
