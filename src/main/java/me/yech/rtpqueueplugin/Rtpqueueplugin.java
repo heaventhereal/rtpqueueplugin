@@ -2,16 +2,14 @@ package me.yech.rtpqueueplugin;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public final class Rtpqueueplugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
-
-    }
-
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
+        Objects.requireNonNull(getCommand("rtpqueue")).setExecutor(new RtpQCommand(this));
+        getConfig().options().copyDefaults(true);
+        saveConfig();
     }
 }

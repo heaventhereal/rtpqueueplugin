@@ -2,3 +2,15 @@ name: rtpqueueplugin
 version: '${project.version}'
 main: me.yech.rtpqueueplugin.Rtpqueueplugin
 api-version: '1.20'
+author: yech
+description: "&7Adds or Removes you from the RTP Queue! (forked from 1lent, JanCantCode and Herodev_ original rtpqueue plugin.)"
+commands:
+  rtpqueue:
+    description: "Adds or Removes you from the RTP Queue!"
+    permission: yech.rtpq
+    permission-message: "&cNo permission to use this command. (permission misssing: yech.rtpq)"
+    usage: /rtpqueue
+  rtpqreload:
+    description: "Reloads the config"
+    permission: yech.rtpq.admin
+    usage: /rtpqreload

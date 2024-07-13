@@ -62,11 +62,11 @@ public class RtpQCommand implements CommandExecutor {
                 assert player1 != null;
                 assert player2 != null;
                 BukkitScheduler scheduler = Bukkit.getScheduler();
-                scheduler.runTaskAsynchronously(plugin, () -> {
+                scheduler.runTask(plugin, () -> {
                     player1.sendMessage(ChatColor.translateAlternateColorCodes('&', teleportation));
                     player2.sendMessage(ChatColor.translateAlternateColorCodes('&', teleportation));
                 });
-                scheduler.runTaskAsynchronously(plugin, () -> {
+                scheduler.runTask(plugin, () -> {
                     player1.teleport(loc);
                     player2.teleport(loc);
                 });
