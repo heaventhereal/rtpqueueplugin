@@ -22,18 +22,23 @@ public class RtpQCommand implements CommandExecutor {
     private final Rtpqueueplugin plugin;
     private final ExecutorService executorService = Executors.newFixedThreadPool(4);
     private final List<UUID> playersInQueue = new ArrayList<>();
-    private final int xMin;
-    private final int xMax;
-    private final int zMin;
-    private final int zMax;
+    private int xMin;
+    private int xMax;
+    private int zMin;
+    private int zMax;
 
     public RtpQCommand(Rtpqueueplugin plugin) {
         this.plugin = plugin;
+        updateConfigValues();
+    }
+
+    public void updateConfigValues() {
         xMin = this.plugin.getConfig().getInt("Min x");
         xMax = this.plugin.getConfig().getInt("Max x");
         zMin = this.plugin.getConfig().getInt("Min z");
         zMax = this.plugin.getConfig().getInt("Max z");
     }
+
     @Override
     public boolean onCommand(final @NotNull CommandSender sender, final @NotNull Command cmd, final @NotNull String label, final String[] args) {
         if (!(sender instanceof Player player)) return false;
@@ -42,6 +47,10 @@ public class RtpQCommand implements CommandExecutor {
             String leftRtp = this.plugin.getConfig().getString("left-rtpq");
             assert leftRtp != null;
             player.sendMessage(ChatColor.translateAlternateColorCodes('&', leftRtp));
+            String globalleftRtpqmessage = this.plugin.getConfig().getString("global-left-rtpq");
+            assert globalleftRtpqmessage != null;
+            globalleftRtpqmessage = globalleftRtpqmessage.replace("%player%", player.getDisplayName());
+            Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', globalleftRtpqmessage));
             return true;
         }
         playersInQueue.add(player.getUniqueId());
@@ -76,6 +85,7 @@ public class RtpQCommand implements CommandExecutor {
         }
         return true;
     }
+
     public Location getRandomLocation() {
         Random randomSource = new Random();
         World hopeFullyExistingDefaultWorld = Bukkit.getWorld("world");

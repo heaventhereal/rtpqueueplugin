@@ -1,6 +1,7 @@
 joined-rtpq: "&7You joined the queue."
 left-rtpq: "&7You left the queue."
-global-joined-rtpq: "&7%player% joined the queue."
+global-joined-rtpq: "&a%player% joined the queue."
+global-left-rtpq: "&c%player% left the queue."
 being-teleported: "&7You are being teleported."
 config-reloaded: "&2Config Reloaded"
 actionbar-joined-rtpq: "&2You joined the queue."

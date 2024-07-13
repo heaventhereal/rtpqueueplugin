@@ -8,7 +8,9 @@ public final class Rtpqueueplugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        Objects.requireNonNull(getCommand("rtpqueue")).setExecutor(new RtpQCommand(this));
+        RtpQCommand rtpQCommand = new RtpQCommand(this);
+        Objects.requireNonNull(getCommand("rtpqueue")).setExecutor(rtpQCommand);
+        Objects.requireNonNull(getCommand("rtpqreload")).setExecutor(new RtpqReloadCommand(this, rtpQCommand));
         getConfig().options().copyDefaults(true);
         saveConfig();
     }

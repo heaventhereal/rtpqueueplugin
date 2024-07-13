@@ -8,9 +8,10 @@ commands:
   rtpqueue:
     description: "Adds or Removes you from the RTP Queue!"
     permission: yech.rtpq
-    permission-message: "&cNo permission to use this command. (permission misssing: yech.rtpq)"
+    permission-message: "&cNo permission to use this command. (permission missing: yech.rtpq)"
     usage: /rtpqueue
   rtpqreload:
     description: "Reloads the config"
     permission: yech.rtpq.admin
+    permission-message: "&cNo permission to use this command. (permission missing: yech.rtpq.admin)"
     usage: /rtpqreload
