@@ -9,3 +9,5 @@
 
 
 > Global Rtp Queue Join Message
+
+> Support for Spigot/Paper
