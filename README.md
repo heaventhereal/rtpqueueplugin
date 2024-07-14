@@ -5,7 +5,7 @@
 > 1v1 Rtp Fight
 
 
-> Configurable Teleport Parameters
+> Everything is configurable in the config.yml
 
 
 > Global Rtp Queue Join Message
